@@ -10,14 +10,12 @@ class UploadAudioController extends GetX.GetxController {
   WebSocketChannel? channel;
   GetX.RxString language = "en".obs;
   GetX.RxBool translating = false.obs;
-  GetX.RxBool done_translating = false.obs;
   GetX.RxList<Map<String, dynamic>> result = <Map<String, dynamic>>[].obs;
 
   void reset() {
     channel = null;
     language.value = "en";
     translating.value = false;
-    done_translating.value = false;
     result.value = [];
   }
 
@@ -36,11 +34,12 @@ class UploadAudioController extends GetX.GetxController {
         }
         channel?.sink.add("_DONE_");
         // Listen for result back
+        translating.value = true;
         channel?.stream.listen((message) {
           if (message is String) {
             if (message == "_UPLOAD_COMPLETE_") {
               GetX.Get.back();
-              translating.value = true;
+              translating.value = false;
             } else if (message == "_DONE_") {
               channel?.sink.close();
             } else {
@@ -48,13 +47,13 @@ class UploadAudioController extends GetX.GetxController {
             }
           }
         }, onDone: () {
-          done_translating.value = true;
+          translating.value = false;
         });
       } catch (e) {
         print('Error sending video: $e');
         channel?.sink.close();
         GetX.Get.back();
-        done_translating.value = true;
+        translating.value = false;
       }
     }
   }

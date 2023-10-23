@@ -54,7 +54,7 @@ class UploadAudio extends StatelessWidget {
                 SizedBox(height: Globals.dimension * 0.02),
                 const Divider(),
                 GetX.Obx(() {
-                  if (controller.translating.isFalse) {
+                  if (controller.result.isEmpty && controller.translating.isFalse) {
                     return const Expanded(
                       child: Center(
                           child: Text(
@@ -96,7 +96,7 @@ class UploadAudio extends StatelessWidget {
                                         ))
                                     .toList() +
                                 [
-                                  controller.done_translating.isFalse
+                                  controller.translating.isTrue
                                       ? Lottie.network(
                                           "https://lottie.host/250aecd3-affd-4170-b90d-2abd664c8aff/Y6iLsMoEUA.json",
                                           width: Globals.dimension * 0.05)
@@ -111,7 +111,7 @@ class UploadAudio extends StatelessWidget {
                 Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      ElevatedButton(
+                      /*ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Globals.color_upload_audio,
@@ -123,7 +123,7 @@ class UploadAudio extends StatelessWidget {
                               child: Icon(Icons.multitrack_audio_rounded,
                                   color: Colors.white,
                                   size: Globals.dimension * 0.03))),
-                      SizedBox(width: Globals.dimension * 0.02),
+                      SizedBox(width: Globals.dimension * 0.02),*/
                       ElevatedButton(
                           onPressed: () {
                             controller.translate();
