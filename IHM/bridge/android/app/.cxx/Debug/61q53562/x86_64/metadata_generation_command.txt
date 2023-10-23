@@ -1,0 +1,23 @@
+                    Executable : /Users/layouni/Library/Android/sdk/cmake/3.18.1/bin/cmake
+arguments : 
+-H/Users/layouni/Desktop/YassineISI/3 ING/BI/Bridge/IHM/bridge/android
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_SYSTEM_VERSION=21
+-DANDROID_PLATFORM=android-21
+-DANDROID_ABI=x86_64
+-DCMAKE_ANDROID_ARCH_ABI=x86_64
+-DANDROID_NDK=/Users/layouni/Library/Android/sdk/ndk/23.1.7779620
+-DCMAKE_ANDROID_NDK=/Users/layouni/Library/Android/sdk/ndk/23.1.7779620
+-DCMAKE_TOOLCHAIN_FILE=/Users/layouni/Library/Android/sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/Users/layouni/Library/Android/sdk/cmake/3.18.1/bin/ninja
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/layouni/Desktop/YassineISI/3 ING/BI/Bridge/IHM/bridge/build/app/intermediates/cxx/Debug/61q53562/obj/x86_64
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/Users/layouni/Desktop/YassineISI/3 ING/BI/Bridge/IHM/bridge/build/app/intermediates/cxx/Debug/61q53562/obj/x86_64
+-DCMAKE_BUILD_TYPE=Debug
+-B/Users/layouni/Desktop/YassineISI/3 ING/BI/Bridge/IHM/bridge/android/app/.cxx/Debug/61q53562/x86_64
+-GNinja
+jvmArgs : 
+
+
+                    Build command args: []
+                    Version: 2

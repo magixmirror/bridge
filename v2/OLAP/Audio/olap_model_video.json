@@ -1,0 +1,66 @@
+{
+  
+    "dimensions": [
+        {
+            "name": "video",
+            "levels": [
+                {
+                    "name": "video_id",
+                    "label": "Video ID"
+                },
+                {
+                    "name": "duration",
+                    "label": "Duration"
+                },
+                {
+                    "name": "type",
+                    "label": "Type"
+                }
+            ]
+        },
+        {
+            "name":"audio",
+            "attributes":["audio_id","duration","type"]
+        },
+        {
+            "name":"file_name",
+            "attributes":["name_id","name"]
+        },
+        {
+            "name":"file_path",
+            "attributes":["path","path_id"]
+        },
+        {
+            "name":"utility",
+            "attributes":["no_silent","utility_id"]
+        }  
+        
+    ],
+    "cubes": [
+        {
+            "name": "Files",
+            "dimensions": ["video","file_name","file_path","utility"],
+         
+            "fact": "facts",
+            "key":"file_id",
+            "joins": [
+                {
+                  "master":"facts.video_id",
+                  "detail":"video.video_id"
+                },   
+                {
+                    "master":"facts.utility_id",
+                    "detail":"utility.utility_id"
+                }, 
+                {
+                    "master":"facts.file_name_id",
+                    "detail":"file_name.name_id"
+                },
+                {
+                    "master":"facts.file_path_id",
+                    "detail":"file_path.path_id"
+                }
+            ]
+        }
+    ]
+}

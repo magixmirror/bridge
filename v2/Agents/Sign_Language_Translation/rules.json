@@ -1,0 +1,16 @@
+{
+    "front":{
+        "a" : "today",
+        "l" : "yes",
+        "y" : "sun",
+        "u" : "thanks",
+        "5-hand" : "hello"
+    },
+    "back":{
+        "a" : "yesterday",
+        "l" : "no",
+        "y" : "moon",
+        "u" : "sleep",
+        "5-hand" : "goodbye"
+    }
+}

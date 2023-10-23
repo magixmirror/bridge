@@ -1,0 +1,7 @@
+Executable : /Users/layouni/Library/Android/sdk/cmake/3.18.1/bin/ninja
+arguments : 
+-C
+/Users/layouni/Desktop/YassineISI/3 ING/BI/Bridge/IHM/bridge/android/app/.cxx/Debug/61q53562/armeabi-v7a
+convertImage
+jvmArgs : 
+

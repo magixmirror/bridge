@@ -1,0 +1,48 @@
+{
+    "dimensions": [
+        {
+            "name": "Video",
+            "levels": [
+                {"name": "video_id"},
+                {"name": "duration"},
+                {"name": "number_frames"}]
+        },
+        {
+            "name": "Frame",
+            "levels": [
+                {"name": "has_landmarks"},
+                {"name": "frame_id"},
+                {"name": "has_decision"},
+                {"name": "number"},
+                {"name": "path"},
+                {"name": "landmarks"}]
+        }
+    ],
+    "cubes": [
+        {
+            "name": "Fact",
+            "dimensions": ["Video","Frame"],
+            "key" : "fact_id",
+            "fact" : "Fact",
+            "mappings":{
+                "Video.duration" : "Video.duration",
+                "Video.number_frames" : "Video.number_frames",
+                "Frame.has_landmarks" : "Frame.has_landmarks",
+                "Frame.has_decision" : "Frame.has_decision",
+                "Frame.path" : "Frame.path",
+                "Frame.number" : "Frame.number",
+                "Frame.landmarks" : "Frame.landmarks"
+            },
+            "joins" : [
+                {
+                    "master": "Fact.video_id",
+                    "detail": "Video.video_id"
+                },
+                {
+                    "master": "Fact.frame_id",
+                    "detail": "Frame.frame_id"
+                }
+            ]
+        }
+    ]
+}

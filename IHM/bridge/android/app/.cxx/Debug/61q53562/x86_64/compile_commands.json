@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/layouni/Desktop/YassineISI/3 ING/BI/Bridge/IHM/bridge/android/app/.cxx/Debug/61q53562/x86_64",
+  "command": "/Users/layouni/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=x86_64-none-linux-android21 --gcc-toolchain=/Users/layouni/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/layouni/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -DconvertImage_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -o CMakeFiles/convertImage.dir/Users/layouni/Desktop/YassineISI/3_ING/BI/Bridge/IHM/bridge/ios/Classes/converter.c.o -c \"/Users/layouni/Desktop/YassineISI/3 ING/BI/Bridge/IHM/bridge/ios/Classes/converter.c\"",
+  "file": "/Users/layouni/Desktop/YassineISI/3 ING/BI/Bridge/IHM/bridge/ios/Classes/converter.c"
+}
+]

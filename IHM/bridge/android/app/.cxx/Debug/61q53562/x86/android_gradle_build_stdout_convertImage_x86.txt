@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/layouni/Desktop/YassineISI/3 ING/BI/Bridge/IHM/bridge/android/app/.cxx/Debug/61q53562/x86'
+ninja: no work to do.

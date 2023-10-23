@@ -1,0 +1,61 @@
+{
+    "dimensions": [
+        {
+            "name": "Video",
+            "levels": [
+                {"name": "video_id"},
+                {"name": "duration"},
+                {"name": "number_frames"}]
+        },
+        {
+            "name": "Frame",
+            "levels": [
+                {"name": "has_landmarks"},
+                {"name": "frame_id"},
+                {"name": "has_decision"},
+                {"name": "number"},
+                {"name": "path"},
+                {"name": "landmarks"}]
+        },
+        {
+            "name": "Decision",
+            "levels": [
+                {"name": "hand_gesture"},
+                {"name": "palm_orientation"},
+                {"name": "decision_id"}]
+        }
+    ],
+    "cubes": [
+        {
+            "name": "Fact",
+            "dimensions": ["Video","Frame","Decision"],
+            "key" : "fact_id",
+            "fact" : "Fact",
+            "mappings":{
+                "Video.duration" : "Video.duration",
+                "Video.number_frames" : "Video.number_frames",
+                "Frame.has_landmarks" : "Frame.has_landmarks",
+                "Frame.has_decision" : "Frame.has_decision",
+                "Frame.path" : "Frame.path",
+                "Frame.number" : "Frame.number",
+                "Frame.landmarks" : "Frame.landmarks",
+                "Decision.hand_gesture" : "Decision.hand_gesture",
+                "Decision.palm_orientation" : "Decision.palm_orientation"
+            },
+            "joins" : [
+                {
+                    "master": "Fact.video_id",
+                    "detail": "Video.video_id"
+                },
+                {
+                    "master": "Fact.frame_id",
+                    "detail": "Frame.frame_id"
+                },
+                {
+                    "master": "Fact.decision_id",
+                    "detail": "Decision.decision_id"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,3 @@
+/Users/layouni/Desktop/YassineISI/3 ING/BI/Bridge/IHM/bridge/android/app/.cxx/Debug/61q53562/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/layouni/Desktop/YassineISI/3 ING/BI/Bridge/IHM/bridge/android/app/.cxx/Debug/61q53562/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/layouni/Desktop/YassineISI/3 ING/BI/Bridge/IHM/bridge/android/app/.cxx/Debug/61q53562/arm64-v8a/CMakeFiles/convertImage.dir
