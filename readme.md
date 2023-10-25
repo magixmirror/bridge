@@ -50,6 +50,11 @@ video architecture V1 represents the standard process pf translating sign langua
 
 - **Training time** : if we want to add a new word, we have to include it in the dataset and retrain the model, and if the dataset contains thousands of words, the training could take hours.
 
+#### Existing solutions
+
+https://paperswithcode.com/task/sign-language-recognition
+
+
 ## Video architecture V2
 The audio architecture v2 represents our BI based solution to the problems mentioned in the V1 architecture, to understand our solution we must first look to the hand elements that make up a word in sign language :
 
