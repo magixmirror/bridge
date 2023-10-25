@@ -39,6 +39,9 @@ and finally the etl process loads each frame and its corresponding data into mys
 
 - **Agent** : An agent is used to extract the landmarks related to the video from the created cube and returns the words that each landmark represents.
 
+
+<img src="./img/DW_Video_V1.png" alt="DW Video V1" width="500"/>
+
 ### Critique
 video architecture V1 represents the standard process pf translating sign language, which relies on the recognition of **words**, its limitations are:
 
@@ -83,6 +86,8 @@ The elements of this solution are :
 
 - **Agent** : The agent is a dynmaic expert systems, extract the elements of the hand that are in the frame and returns the corresponding word.
 
+<img src="./img/DW_Video_V2.png" alt="DW Video V2" width="500"/>
+
 ### Required dependencies
 - **experta** : used to create the expert system.
 
@@ -112,3 +117,10 @@ To set up the project, follow these steps:
     ```bash
     python upload_video_server.py
     ```
+
+## Screenshots
+<img src="./img/SS1.jpg" alt="Screenshot 1" width="200"/>
+<img src="./img/SS2.jpg" alt="Screenshot 2" width="200"/>
+<img src="./img/SS3.jpg" alt="Screenshot 3" width="200"/>
+<img src="./img/SS4.jpg" alt="Screenshot 4" width="200"/>
+<img src="./img/SS5.jpg" alt="Screenshot 5" width="200"/>

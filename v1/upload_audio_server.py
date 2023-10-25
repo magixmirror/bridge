@@ -7,6 +7,7 @@ import json
 import sys
 import multiprocessing
 from multiprocessing import Process, Queue
+import time
 
 # Audio imports
 from DW.Audio import dw_audio
@@ -25,7 +26,7 @@ OLAP_AUDIO_MODEL_PATH = "./OLAP/Audio/olap_model_audio.json"
 
 async def video_server(websocket, path):
     try:
-
+        start_time =  time.time()
         ########################### Collect video ###########################
         video_id = str(uuid.uuid1())
         video_path = os.path.join(AUDIOS_PATH, video_id +".mp3")
@@ -43,6 +44,9 @@ async def video_server(websocket, path):
         await websocket.send(result)
 
         await websocket.send("_DONE_")
+        end_time =  time.time() - start_time
+        print("total time in seconds : ")
+        print(end_time)
     except  Exception as e:
         print(f"Error : {e}")
         pass

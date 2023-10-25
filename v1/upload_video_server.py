@@ -6,6 +6,7 @@ import os
 import json
 import sys
 from multiprocessing import Process, Queue, Pool
+import time
 
 # Audio imports
 from DW.Audio import dw_audio
@@ -35,7 +36,7 @@ SIGN_TRANSLATION_MODEL_PATH = "./Agents/Sign_Language_Translation/model.p"
 
 async def video_server(websocket, path):
     try:
-
+        start_time =  time.time()
         ########################### Collect video ###########################
         video_id = str(uuid.uuid1())
         video_path = os.path.join(VIDEOS_PATH, video_id +".mp4")
@@ -73,6 +74,9 @@ async def video_server(websocket, path):
         sl_process.join()
 
         await websocket.send("_DONE_")
+        end_time =  time.time() - start_time
+        print("total time in seconds : ")
+        print(end_time)
     except  Exception as e:
         print(f"Error : {e}")
         pass
