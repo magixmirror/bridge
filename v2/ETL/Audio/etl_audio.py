@@ -20,7 +20,7 @@ def convert_mp4_to_mp3(input_file, output_file):
 
 def convert_video_to_audio(input_file, output_file):
     video = AudioSegment.from_file(input_file)
-    output_directory = 'media'
+    output_directory = 'media/audios'
     os.makedirs(output_directory, exist_ok=True)
     output_file_path = os.path.join(output_directory, output_file)
     video.export(output_file_path, format="mp3")
@@ -72,7 +72,7 @@ def save_file_data_to_fact(file_name_id, file_size, file_type, file_path_id, vid
 
 
 def save_audio(input_audio_file):
-    media_folder = 'media'
+    media_folder = 'media/audios'
     os.makedirs(media_folder, exist_ok=True)
     input_audio_basename = os.path.basename(input_audio_file)
     new_path = os.path.join(media_folder, input_audio_basename)
