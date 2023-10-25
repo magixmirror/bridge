@@ -50,7 +50,7 @@ video architecture V1 represents the standard process pf translating sign langua
 
 - **Training time** : if we want to add a new word, we have to include it in the dataset and retrain the model, and if the dataset contains thousands of words, the training could take hours.
 
-#### Existing solutions
+### Existing solutions
 
 https://paperswithcode.com/task/sign-language-recognition
 
