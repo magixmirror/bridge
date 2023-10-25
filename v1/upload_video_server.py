@@ -104,8 +104,7 @@ def exec_audio_bi_arch(video_path, video_id, queue):
 def exec_video_bi_arch(video_path, queue):
     video_db_id = etl_sign_language.process_video(video_path)
     cube_browser = olap_sign_language.create_olap_cube(dw_sign_language.DB_STRING, OLAP_SL_MODEL_PATH)
-    result_array = agent_sign_language_translation.process_cube_by_video(cube_browser,video_db_id, SIGN_TRANSLATION_MODEL_PATH)
-    result_phrase = ' '.join(result_array)
+    result_phrase = agent_sign_language_translation.process_cube_by_video(cube_browser,video_db_id, SIGN_TRANSLATION_MODEL_PATH)
     
     inputs = [(result_phrase, "fr"), (result_phrase, "de"), (result_phrase, "it"), (result_phrase, "es")]
     with Pool(processes=4) as pool:

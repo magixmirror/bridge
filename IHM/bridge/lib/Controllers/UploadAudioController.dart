@@ -23,11 +23,11 @@ class UploadAudioController extends GetX.GetxController {
     if (audio != null) {
       Dialogs.uploadingDialog();
       reset();
-      channel = WebSocketChannel.connect(
-        Uri.parse('ws://192.168.1.19:8764'),
-      );
-      File audioFile = File(audio!.path!);
       try {
+        channel = WebSocketChannel.connect(
+          Uri.parse('ws://192.168.1.19:8764'),
+        );
+        File audioFile = File(audio!.path!);
         final fileStream = audioFile.openRead();
         await for (var chunk in fileStream) {
           channel?.sink.add(chunk);
@@ -39,7 +39,6 @@ class UploadAudioController extends GetX.GetxController {
           if (message is String) {
             if (message == "_UPLOAD_COMPLETE_") {
               GetX.Get.back();
-              translating.value = false;
             } else if (message == "_DONE_") {
               channel?.sink.close();
             } else {
@@ -50,8 +49,10 @@ class UploadAudioController extends GetX.GetxController {
           translating.value = false;
         });
       } catch (e) {
-        print('Error sending video: $e');
-        channel?.sink.close();
+        print('Error sending audio: $e');
+        if(channel != null) {
+          channel?.sink.close();
+        }
         GetX.Get.back();
         translating.value = false;
       }

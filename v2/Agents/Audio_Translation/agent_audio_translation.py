@@ -61,6 +61,6 @@ def process_cube_audio(cube_browser, audio_id):
     if audio_path is not None:
         return audio_to_text(audio_file_path = audio_path)
     else:
-        return "_No specch found in audio_"
+        return "_No speech found in audio_"
 
 

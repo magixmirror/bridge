@@ -100,8 +100,8 @@ def predict_video(frames):
     for facts in list_facts_without_repetition:
         predict_frame(facts)
         predictions.append(result)
-
-    return predictions
+        
+    return ' '.join(predictions)
 
 
 
@@ -129,6 +129,6 @@ def remove_repetition(lists):
 def process_cube(cube_browser, video_id):
     frames = browse_cube(cube_browser = cube_browser, video_id = video_id)
     if(len(frames) == 0):
-        return ["No sign language found in video"]
+        return "_No sign language found in video_"
     else:
         return predict_video(frames = frames)

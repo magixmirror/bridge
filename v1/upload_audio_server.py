@@ -14,12 +14,6 @@ from ETL.Audio import etl_audio
 from OLAP.Audio import olap_audio
 from Agents.Audio_Translation import agent_audio_translation
 
-# Sign language imports
-from DW.Sign_Language import dw_sign_language
-from ETL.Sign_Language import etl_sign_language
-from OLAP.Sign_Language import olap_sign_language
-from Agents.Sign_Language_Translation import agent_sign_language_translation
-
 # Text translation imports 
 from Agents.Text_Translation import agent_text_translation
 
@@ -58,7 +52,6 @@ def exec_audio_bi_arch(audio_path, video_id):
     audio_db_id = etl_audio.process_audio(audio_path)
     cube_browser = olap_audio.create_olap_cube(dw_audio.DB_STRING, OLAP_AUDIO_MODEL_PATH)
     result = agent_audio_translation.process_cube_audio(cube_browser, audio_db_id)
-
     inputs = [(result, "en"),(result, "fr"), (result, "de"), (result, "it"), (result, "es")]
     with multiprocessing.Pool(processes=5) as pool:
             outputs = pool.map(agent_text_translation.translate, inputs)

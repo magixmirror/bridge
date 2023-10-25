@@ -27,8 +27,8 @@ class UploadVideoController extends GetX.GetxController {
         channel = WebSocketChannel.connect(
           Uri.parse('ws://192.168.1.19:8765'),
         );
-        //File videoFile = File(video!.path!);
-        final fileStream = video!.readStream!;
+        File videoFile = File(video!.path!);
+        final fileStream = videoFile.openRead();
         await for (var chunk in fileStream) {
           channel?.sink.add(chunk);
         }

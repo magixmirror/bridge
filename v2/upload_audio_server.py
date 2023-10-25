@@ -14,12 +14,6 @@ from ETL.Audio import etl_audio
 from OLAP.Audio import olap_audio
 from Agents.Audio_Translation import agent_audio_translation
 
-# Sign language imports
-from DW.Sign_Language import dw_sign_language
-from ETL.Sign_Language import etl_sign_language
-from OLAP.Sign_Language import olap_sign_language
-from Agents.Sign_Language_Translation import agent_sign_language_translation
-
 # Text translation imports 
 from Agents.Text_Translation import agent_text_translation
 

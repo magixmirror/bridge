@@ -64,10 +64,10 @@ def insert_audio_get_id(audio_duration, audio_type, mysql_connection):
     return cursor.lastrowid
 
 # Function to save file data in the fact table
-def save_file_data_to_fact(file_name_id, file_size, file_type, file_path_id, video_id, utility_id, mysql_connection):
+def save_file_data_to_fact(file_name_id, file_size, file_type, file_path_id, video_id,audio_id, utility_id, mysql_connection):
     cursor = mysql_connection.cursor()
-    insert_query = "INSERT INTO facts (file_name_id, file_size, file_type, file_path_id, video_id, utility_id) VALUES (%s, %s, %s, %s, %s, %s)"
-    cursor.execute(insert_query, (file_name_id, file_size, file_type, file_path_id, video_id, utility_id))
+    insert_query = "INSERT INTO facts (file_name_id, file_size, file_type, file_path_id, video_id, audio_id, utility_id) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    cursor.execute(insert_query, (file_name_id, file_size, file_type, file_path_id, video_id, audio_id, utility_id))
     mysql_connection.commit()
     cursor.close()
 
@@ -143,7 +143,7 @@ def process_video(input_file,output_path):
         size_in_bytes = os.path.getsize(output_path)
         size_in_mb = size_in_bytes / (1024 * 1024)  # Convert to megabytes
         size_in_mb_str = f"{size_in_mb:.3f} MB"
-        save_file_data_to_fact(file_name_id, size_in_mb_str, "MP3", file_path_id, video_id, utility_id, cnx)
+        save_file_data_to_fact(file_name_id, size_in_mb_str, "MP3", file_path_id, video_id, None,utility_id, cnx)
         print("File data saved in the database.")
 
         return video_id
@@ -179,7 +179,6 @@ def process_audio(input_media_file):
             save_file_data_to_fact(file_name_id, size_in_mb_str, "MP3", file_path_id, None,audio_id, utility_id, cnx)
 
             print("MP3 file data saved in the database.")
-
             return audio_id
     except mysql.connector.Error as err:
         print(f"Error: {err}")

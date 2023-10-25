@@ -36,7 +36,7 @@ def predict_video(model_path, cube_result):
         predicted_index = int((model.predict(landmarks))[0])
         predicted_word = labels_dict[predicted_index]
         predictions.append(predicted_word)
-    return remove_repetition(predictions)
+    return ' '.join(remove_repetition(predictions))
 
 
 def predict_frame(model_path, cube_result):
@@ -63,14 +63,6 @@ def remove_repetition(list):
 def process_cube_by_video(cube_browser, video_id, model_path):
     frames = browse_cube_by_video(cube_browser = cube_browser, video_id = video_id)
     if(len(frames) == 0):
-        return ["_No sign language found in video_"]
+        return "_No sign language found in video_"
     else:
         return predict_video(model_path = model_path, cube_result = frames)
-    
-
-def process_cube_by_frame(cube_browser, frame_id, model_path):
-    frame = browse_cube_by_frame(cube_browser = cube_browser, frame_id = frame_id)
-    if(frame == None):
-        return None
-    else:
-        return predict_frame(model_path = model_path, cube_result = frame)
