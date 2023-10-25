@@ -66,6 +66,10 @@ The audio architecture v2 represents our BI based solution to the problems menti
 The idea is to create for each of the five element their own dataset, their own model and their own prediction program, afterwards the result of each prediction is passed to a dynamic expert system that returns the corresponding word of the 5 predictions.
 
 <p align="center">
+    <img src="./img/Global_Architecture_V2.png" alt="DW Video V1" width="700"/>
+</p>
+
+<p align="center">
     <img src="./img/rules.png" alt="Rules" width="300"/>   
 </p>
 
