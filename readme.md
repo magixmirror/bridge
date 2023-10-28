@@ -56,7 +56,7 @@ https://paperswithcode.com/task/sign-language-recognition
 
 
 ## Video architecture V2
-The audio architecture v2 represents our BI based solution to the problems mentioned in the V1 architecture, to understand our solution we must first look to the hand elements that make up a word in sign language :
+The video architecture v2 represents our BI based solution to the problems mentioned in the V1 architecture, to understand our solution we must first look to the hand elements that make up a word in sign language :
 
 1. Hand shape (A, L, 5-hand, V, ...) (40 total)
 
